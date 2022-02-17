@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import View
+from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
+from .models import Person
 # Create your views here.
 
 #function based view
 
-def myview(request):
+def myview(self, request):
 	return HttpResponse("<h1>FUNCTION BASED VIEW</H1>")
 
 #Class based view
@@ -20,3 +23,10 @@ class MyViewchild(MyView):
   def get(self,request):
     return HttpResponse(self.name +"**"+ self.myname)
 
+def detail(request):
+   # if request.method=='GET':
+      data = Person.objects.all()
+      context={
+        'data': data,
+      }
+      return render(request,'poll_class/index.html', context)

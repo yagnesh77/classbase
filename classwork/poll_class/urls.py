@@ -7,5 +7,6 @@ urlpatterns = [
     path('func/', views.myview, name ='func'),
     path('class/',views.MyView.as_view(), name ='class'),
     path('child/',views.MyViewchild.as_view(),name ='child'),
+    path('',views.detail,name='detail'),
     
 ]

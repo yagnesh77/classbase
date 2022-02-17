@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+<table>
+    <tr>
+        <th>USERNAME</th>
+        <th>FIRSTNAME</th>
+        <th>MIDDLENAME</th>
+        <th>LASTNAME</th>
+        <th>AGE</th>
+        
+    </tr>
+    {% for i in data %}
+        <tr>
+               <td>{{i.username}}</td>
+		       <td>{{i.firstName}}</td>
+		       <td>{{i.middleName}}</td>
+		       <td>{{i.lastName}}</td>
+		       <td>{{i.age}}</td>
+
+        </tr>
+    {% endfor %}
+	
+</table>	
+
+
+
+
+</body>
+</html>
+
+
